@@ -50,6 +50,10 @@ graph TD
     M --> N[Dashboard: Views to Carts to Revenue]
 ---
 
+![Live Tag Flow Demo](assets/live-tag-demo.png)
+
+---
+
 ## API Integration Details
 
 | API | Endpoint | Use Case | Auth |
