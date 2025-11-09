@@ -31,26 +31,23 @@ This document is the **developer briefing** — everything a dev needs to clone,
 
 ## Component Communication (Data Flow)
 
-```mermaid
 graph TD
-    A[User Opens App] --> B[Upload Inventory CSV / Shopify Link]
-    B --> C[Backend: /sync-inventory → Zapier → Google Sheets]
+    A[User Opens App] --> B[Upload Inventory CSV or Shopify Link]
+    B --> C[Backend: /sync-inventory to Zapier to Google Sheets]
     C --> D[Frontend: Load Tags into Memory]
 
-    D --> E[Hit "Go Live"]
+    D --> E[Hit Go Live]
     E --> F[React Native Camera Stream]
-    F --> G[Overlay Draggable Tags (AR via Gesture Handler)]
-    G --> H[Voice Input → Speech-to-Text → Auto-Tag]
+    F --> G[Overlay Draggable Tags using Gesture Handler]
+    G --> H[Voice Input to Speech-to-Text to Auto-Tag]
 
     H --> I[Viewer Taps Tag]
-    I --> J[Frontend → Backend: /create-checkout]
+    I --> J[Frontend to Backend: /create-checkout]
     J --> K[Stripe Checkout Session]
-    K --> L[Success → Zapier → Email Recap + Upsell]
+    K --> L[Success to Zapier to Email Recap + Upsell]
 
     L --> M[Firestore: Log Sale + Analytics]
-    M --> N[Dashboard: Views → Carts → Revenue]
-```
-
+    M --> N[Dashboard: Views to Carts to Revenue]
 ---
 
 ## API Integration Details
